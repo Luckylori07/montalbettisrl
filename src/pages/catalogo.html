@@ -1,0 +1,74 @@
+---
+title: Catalogo - Montalbetti S.r.l. (demo)
+description: Catalogo dimostrativo con un campione di prodotti reali di Montalbetti S.r.l.: cerca per nome, filtra per categoria e marchio, ordina i risultati.
+nav: catalogo
+crumbs: Catalogo
+scripts: data, catalogo
+---
+<section class="page-head light">
+  <div class="container page-head-inner">
+    <h1>Catalogo</h1>
+    <p>Un campione di articoli tratti dal catalogo pubblico, per provare ricerca, filtri e schede prodotto.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="demo-note">
+      {{icon:info}}
+      <p><b>Catalogo dimostrativo, non completo.</b> Questa pagina mostra pochi prodotti reali del catalogo ufficiale e non è collegata al database aggiornato. Non sono indicati prezzi né disponibilità: sul sito ufficiale i prezzi sono visibili solo ai clienti registrati. <a href="https://www.montalbettisrl.com/" target="_blank" rel="noopener noreferrer">Apri il catalogo ufficiale</a>.</p>
+    </div>
+
+    <div class="catalog-layout">
+      <aside class="filters" id="filters" aria-label="Filtri" >
+        <div class="filters-head">
+          <h2>Filtri</h2>
+          <button type="button" class="btn btn-ghost btn-sm filters-close" data-filters-close aria-label="Chiudi i filtri">{{icon:x}}</button>
+        </div>
+        <fieldset class="filter-group">
+          <legend>Categoria</legend>
+          <div id="filter-cats"></div>
+        </fieldset>
+        <fieldset class="filter-group">
+          <legend>Marchio</legend>
+          <div class="brand-filter" id="filter-brands"></div>
+        </fieldset>
+        <button type="button" class="btn btn-accent filters-done" data-filters-close>Mostra i risultati</button>
+      </aside>
+      <div class="scrim" id="scrim"></div>
+
+      <div>
+        <form class="toolbar" id="search-form" role="search" aria-label="Cerca nel catalogo">
+          <div class="search-field">
+            <label for="q">Cerca un prodotto, un marchio o un codice</label>
+            {{icon:search}}
+            <input class="input" id="q" name="q" type="search" placeholder="Ad esempio: copertura, SKS, pedali" autocomplete="off" enterkeyhint="search">
+          </div>
+          <div class="toolbar-row">
+            <button type="button" class="btn btn-ghost filter-toggle" id="filters-open" aria-expanded="false" aria-controls="filters">{{icon:filter}} Filtri</button>
+            <div class="select-field">
+              <label for="sort">Ordina per</label>
+              <select class="select" id="sort" name="sort"></select>
+            </div>
+          </div>
+        </form>
+
+        <div class="results-bar">
+          <p class="results-count" id="results-count">Caricamento…</p>
+          <div class="active-filters" id="active-filters"></div>
+          <button type="button" class="btn btn-ghost btn-sm" id="reset" hidden>Azzera tutto</button>
+        </div>
+        <p class="visually-hidden" id="results-live" role="status" aria-live="polite"></p>
+
+        <ul class="product-grid" id="results"></ul>
+
+        <div class="empty" id="empty" hidden>
+          {{icon:search}}
+          <h2>Nessun prodotto trovato</h2>
+          <p>Prova con un termine più semplice, controlla l'ortografia oppure togli qualche filtro. Il campione della demo contiene solo alcuni articoli: l'elenco completo è sul sito ufficiale.</p>
+          <button type="button" class="btn btn-accent" id="empty-reset">Azzera ricerca e filtri</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

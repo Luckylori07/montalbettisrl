@@ -1,0 +1,40 @@
+---
+title: Marchi - Montalbetti S.r.l. (demo)
+description: I 23 marchi presenti nel catalogo ufficiale Montalbetti S.r.l., da Basil a Unior: filtra per iniziale o cerca per nome e apri la pagina ufficiale di ciascun marchio.
+nav: marchi
+crumbs: Marchi
+scripts: data, marchi
+---
+<section class="page-head light">
+  <div class="container page-head-inner">
+    <h1>I marchi del catalogo</h1>
+    <p>Ventitré marchi, così come sono elencati nella sezione “Marche” del sito ufficiale. Ogni scheda rimanda alla pagina originale del marchio.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <form class="brand-tools" id="brand-form" role="search" aria-label="Cerca tra i marchi">
+      <div class="search-field" style="max-width:480px">
+        <label for="brand-q">Cerca un marchio</label>
+        {{icon:search}}
+        <input class="input" id="brand-q" type="search" placeholder="Ad esempio: Unior" autocomplete="off">
+      </div>
+      <div>
+        <p style="font-size:.82rem;font-weight:650;color:var(--muted);margin:0 0 8px" id="letters-label">Filtra per iniziale</p>
+        <div class="letters" id="letters" role="group" aria-labelledby="letters-label"></div>
+      </div>
+    </form>
+    <div class="results-bar">
+      <p class="results-count" id="brand-count" role="status" aria-live="polite"></p>
+      <button type="button" class="btn btn-ghost btn-sm" id="brand-reset">Mostra tutti</button>
+    </div>
+    <ul class="brand-grid" id="brand-list"></ul>
+    <div class="empty" id="brand-empty" hidden>
+      {{icon:search}}
+      <h2>Nessun marchio trovato</h2>
+      <p>Controlla l'ortografia oppure azzera la ricerca per vedere l'elenco completo.</p>
+    </div>
+    <p class="note">Il numero di articoli per marchio è quello rilevato sul catalogo pubblico a ottobre 2026. Loghi e marchi appartengono ai rispettivi titolari e sono riprodotti senza modifiche solo a scopo dimostrativo.</p>
+  </div>
+</section>
