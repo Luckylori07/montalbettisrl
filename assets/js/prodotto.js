@@ -59,7 +59,7 @@
 
   document.title = p.name + " - Montalbetti S.r.l. (demo)";
   var md = document.querySelector('meta[name="description"]');
-  if (md) md.setAttribute("content", p.name + ": scheda di esempio del catalogo Montalbetti S.r.l. (demo). Dati tratti dal catalogo pubblico del sito ufficiale.");
+  if (md) md.setAttribute("content", p.name + ": scheda di esempio del catalogo Montalbetti S.r.l. (demo).");
   var bcEl = document.getElementById("bc-current");
   if (bcEl) bcEl.textContent = p.name;
 
@@ -108,16 +108,11 @@
   }
 
   var actions = el("div", "pd-actions");
-  var official = el("a", "btn btn-accent");
-  official.href = p.url; official.target = "_blank"; official.rel = "noopener noreferrer";
-  official.appendChild(document.createTextNode("Vedi la scheda ufficiale"));
-  official.appendChild(ICON("ext"));
-  actions.appendChild(official);
   var subject = "Richiesta informazioni: " + p.name + (p.code ? " (" + p.code + ")" : "");
   var body = "Buongiorno,\n\nvorrei ricevere informazioni sul prodotto:\n" + p.name + (p.code ? "\nCodice: " + p.code : "") + "\n\nGrazie.";
-  var ask = el("a", "btn btn-ghost");
+  var ask = el("a", "btn btn-accent");
   ask.href = "mailto:info@montalbettisrl.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-  ask.appendChild(document.createTextNode("Richiedi informazioni"));
+  ask.appendChild(document.createTextNode("Richiedi prezzo e disponibilità"));
   ask.appendChild(ICON("mail"));
   actions.appendChild(ask);
   info.appendChild(actions);
@@ -125,7 +120,7 @@
   var note = el("div", "price-note");
   note.appendChild(ICON("lock"));
   var np = el("p");
-  np.innerHTML = "<b>Prezzi e disponibilità</b> non sono mostrati in questa demo. Sul sito ufficiale i prezzi sono visibili dopo l'accesso con le credenziali del cliente.";
+  np.innerHTML = "<b>Prezzi riservati ai clienti registrati.</b> Per prezzo e disponibilità di questo articolo scrivi a Montalbetti o <a href=\"contatti.html\">richiedi l'accesso</a>.";
   note.appendChild(np);
   info.appendChild(note);
   wrap.appendChild(info);

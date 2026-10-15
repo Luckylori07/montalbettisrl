@@ -36,15 +36,16 @@ Impostazioni del repository > Pages > "Deploy from a branch" > branch e cartella
 
 - Home con hero, famiglie di prodotto, categorie visuali, marchi, risorse per rivenditori, novità, CTA.
 - Catalogo: ricerca (senza accenti, più parole), filtri per categoria e marchio con conteggi, ordinamento, stato vuoto, stato nell'URL, pannello filtri su mobile.
-- Scheda prodotto dinamica con gestione di id mancante o inesistente; link alla scheda ufficiale e richiesta informazioni via `mailto:`.
-- Marchi con ricerca e filtro per iniziale; rivenditori con rimando allo strumento ufficiale; risorse/notizie con archivio storico marcato come tale.
+- Scheda prodotto dinamica con gestione di id mancante o inesistente; richiesta di prezzo e disponibilità via `mailto:`.
+- Marchi con ricerca e filtro per iniziale; pagina rivenditori con richiesta via email; risorse e ultima notizia (l'archivio storico delle comunicazioni 2019-2023 è stato volutamente omesso).
 - Banner demo, filigrana "DEMO" (CSS, `pointer-events: none`), attribuzione Tramontis in footer, `prefers-reduced-motion` rispettato.
 
 ## Limiti (nessun backend)
 
 - Il catalogo è un **campione di 59 prodotti** del catalogo pubblico, non aggiornato in tempo reale. Nessun prezzo, disponibilità o promozione (sul sito ufficiale i prezzi richiedono il login).
 - Il modulo contatti **non invia nulla**: valida e apre un'email precompilata (`mailto:`). Non mostra conferme di invio.
-- L'elenco rivenditori non è replicato: si rimanda allo strumento ufficiale.
+- La ricerca rivenditori non è collegata a un'anagrafica: la pagina porta a una richiesta via email. Da integrare con i dati di Montalbetti.
+- Il sito è pensato per sostituire quello attuale: non rimanda al vecchio sito (restano solo i PDF delle informative privacy/cookie in vigore, in `privacy.html`, e una citazione in `note-legali.html`). Accesso ai prezzi, ordini B2B e catalogo completo vanno collegati ai sistemi di Montalbetti in fase di attivazione.
 - Nessun carrello, account o checkout.
 - La categoria "Abbigliamento" non è stata inclusa: non compare tra le categorie del sito ufficiale.
 

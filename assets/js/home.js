@@ -21,8 +21,7 @@
       if (!b) return;
       var li = el("li");
       var a = el("a", "brand-tile");
-      a.href = b.url; a.target = "_blank"; a.rel = "noopener noreferrer";
-      a.setAttribute("aria-label", b.name + ": pagina ufficiale nel catalogo Montalbetti (si apre in una nuova scheda)");
+      a.href = "marchi.html#" + b.slug;
       var logo = el("span", "brand-logo");
       var img = document.createElement("img");
       img.src = b.logo; img.alt = ""; img.width = b.w; img.height = b.h; img.loading = "lazy";

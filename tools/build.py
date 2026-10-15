@@ -112,13 +112,12 @@ def footer():
         <h2 class="footer-title">Sito</h2>
         <ul class="footer-list">{nav}</ul>
       </nav>
-      <nav aria-label="Sito ufficiale">
-        <h2 class="footer-title">Sito ufficiale</h2>
+      <nav aria-label="Per i clienti">
+        <h2 class="footer-title">Per i clienti</h2>
         <ul class="footer-list">
-          <li><a href="https://www.montalbettisrl.com/" target="_blank" rel="noopener noreferrer">montalbettisrl.com</a></li>
-          <li><a href="https://www.montalbettisrl.com/index.php/rivenditori.html" target="_blank" rel="noopener noreferrer">Trova un rivenditore</a></li>
-          <li><a href="https://www.montalbettisrl.com/index.php/pdfcatalog/" target="_blank" rel="noopener noreferrer">Catalogo ufficiale</a></li>
-          <li><a href="https://www.montalbettisrl.com/index.php/info/" target="_blank" rel="noopener noreferrer">Richiesta informazioni</a></li>
+          <li><a href="contatti.html">Richiedi l'accesso ai prezzi</a></li>
+          <li><a href="rivenditori.html">Trova un rivenditore</a></li>
+          <li><a href="contatti.html">Richiesta informazioni</a></li>
         </ul>
       </nav>
       <nav aria-label="Note legali">
@@ -132,7 +131,7 @@ def footer():
     </div>
     <div class="footer-base">
       <p>proposta di sito realizzata da <a href="{TRAMONTIS}" target="_blank" rel="noopener noreferrer">Tramontis</a></p>
-      <p class="footer-fine">Marchi, loghi e immagini dei prodotti appartengono ai rispettivi titolari. Sito dimostrativo non ufficiale.</p>
+      <p class="footer-fine">Marchi, loghi e immagini dei prodotti appartengono ai rispettivi titolari. Proposta di sito in versione dimostrativa.</p>
     </div>
   </div>
 </footer>"""
@@ -165,7 +164,7 @@ def crumbs(meta):
 
 
 def gauge():
-    """Quadrante a 23 tacche: una per ogni marchio presente nel catalogo ufficiale."""
+    """Quadrante a 23 tacche: una per ogni marchio presente nel catalogo."""
     n, cx, cy, r1, r2 = 23, 100, 100, 78, 92
     ticks = []
     for i in range(n):
@@ -176,7 +175,7 @@ def gauge():
             f'<line class="tick" style="--i:{i}" x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}"/>'
         )
     return (
-        '<svg class="gauge-svg" viewBox="0 0 200 200" role="img" aria-label="Quadrante: 23 marchi nel catalogo ufficiale" focusable="false">'
+        '<svg class="gauge-svg" viewBox="0 0 200 200" role="img" aria-label="Quadrante: 23 marchi nel catalogo" focusable="false">'
         '<circle class="gauge-ring" cx="100" cy="100" r="64" fill="none"/>'
         f'{"".join(ticks)}'
         '<g class="needle"><line x1="100" y1="100" x2="100" y2="52"/><circle cx="100" cy="100" r="5"/></g>'

@@ -1,4 +1,4 @@
-/* Pagina marchi: elenco dei 23 marchi del catalogo ufficiale, filtro per iniziale e ricerca. */
+/* Pagina marchi: elenco dei 23 marchi del catalogo, filtro per iniziale e ricerca. */
 (function () {
   "use strict";
 
@@ -54,6 +54,7 @@
     list.forEach(function (b) {
       var li = el("li");
       var card = el("article", "brand-tile-wrap");
+      card.id = b.slug;
       var logo = el("div", "brand-logo");
       var img = document.createElement("img");
       img.src = b.logo; img.alt = "Logo " + b.name; img.loading = "lazy"; img.width = b.w; img.height = b.h;
@@ -64,14 +65,14 @@
       meta.appendChild(el("span", "", b.count + (b.count === 1 ? " articolo" : " articoli")));
       card.appendChild(meta);
       var links = el("div", "links");
-      var off = el("a", "", "Pagina ufficiale");
-      off.href = b.url; off.target = "_blank"; off.rel = "noopener noreferrer";
-      off.setAttribute("aria-label", "Pagina ufficiale " + b.name + " (si apre in una nuova scheda)");
-      links.appendChild(off);
       if (demoCount[b.slug]) {
-        var demo = el("a", "", "Nella demo (" + demoCount[b.slug] + ")");
+        var demo = el("a", "", "Vedi i prodotti (" + demoCount[b.slug] + ")");
         demo.href = "catalogo.html?brand=" + b.slug;
         links.appendChild(demo);
+      } else {
+        var ask = el("a", "", "Richiedi informazioni");
+        ask.href = "mailto:info@montalbettisrl.com?subject=" + encodeURIComponent("Informazioni sul marchio " + b.name);
+        links.appendChild(ask);
       }
       card.appendChild(links);
       li.appendChild(card);
