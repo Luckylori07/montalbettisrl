@@ -1,0 +1,82 @@
+---
+title: Contatti - Montalbetti S.r.l. (demo)
+description: Contatta Montalbetti S.r.l., Via Roma 57, 21020 Daverio (VA): telefono 0332 285147, email info@montalbettisrl.com e modulo di contatto che prepara un'email.
+nav: contatti
+crumbs: Contatti
+scripts: contatti
+---
+<section class="page-head light">
+  <div class="container page-head-inner">
+    <h1>Contatti</h1>
+    <p>Per informazioni sul catalogo, sui marchi o sugli ordini scrivi o chiama la sede di Daverio.</p>
+  </div>
+</section>
+
+<section class="section-tight" style="padding-block:clamp(40px,6vw,80px)">
+  <div class="container contact-layout">
+    <div class="reveal">
+      <h2 class="h2" style="font-size:clamp(1.7rem,3.4vw,2.4rem)">Montalbetti S.r.l.</h2>
+      <div class="contact-cards">
+        <a class="contact-card" href="tel:+390332285147"><span class="ico">{{icon:phone}}</span><span><small>Telefono</small><b>0332 285147</b></span></a>
+        <a class="contact-card" href="mailto:info@montalbettisrl.com"><span class="ico">{{icon:mail}}</span><span><small>Email</small><b>info@montalbettisrl.com</b></span></a>
+        <a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Roma+57+21020+Daverio+VA+Italia" target="_blank" rel="noopener noreferrer"><span class="ico">{{icon:pin}}</span><span><small>Sede (apre la mappa in una nuova scheda)</small><b>Via Roma, 57 - 21020 Daverio (VA), Italia</b></span></a>
+      </div>
+      <p class="muted">Fax: 0332 968509</p>
+      <div class="map-card">
+        <div><b>Vuoi raggiungerci?</b><p>Apri l'indirizzo nella tua app di mappe per calcolare il percorso.</p></div>
+        <a class="btn btn-accent" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Roma+57+21020+Daverio+VA+Italia" target="_blank" rel="noopener noreferrer">Apri la mappa {{icon:ext}}</a>
+      </div>
+    </div>
+
+    <div class="form-card reveal" style="--d:100ms">
+      <h2>Scrivi a Montalbetti</h2>
+      <p class="muted" style="margin-top:8px"><b>Come funziona:</b> questo sito dimostrativo non ha un server che riceve i messaggi. Compilando il modulo si apre il tuo programma di posta con una email già pronta, da inviare tu stesso.</p>
+      <form id="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="nome">Nome <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obbligatorio)</span></label>
+            <input class="input" id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="nome-err">
+            <span class="error" id="nome-err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="azienda">Azienda</label>
+            <input class="input" id="azienda" name="azienda" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="email">Email <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obbligatorio)</span></label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">
+            <span class="error" id="email-err" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="telefono">Telefono</label>
+            <input class="input" id="telefono" name="telefono" type="tel" autocomplete="tel">
+          </div>
+          <div class="field full">
+            <label for="oggetto">Argomento</label>
+            <select class="select" id="oggetto" name="oggetto">
+              <option>Richiesta di informazioni sul catalogo</option>
+              <option>Accesso ai prezzi e ordini</option>
+              <option>Diventare rivenditore</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="messaggio">Messaggio <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obbligatorio)</span></label>
+            <textarea class="input" id="messaggio" name="messaggio" required aria-describedby="messaggio-err"></textarea>
+            <span class="error" id="messaggio-err" role="alert"></span>
+          </div>
+          <div class="field full">
+            <label class="check" for="privacy" style="margin-inline:0">
+              <input type="checkbox" id="privacy" name="privacy" required aria-describedby="privacy-err">
+              <span>Ho letto l'<a href="privacy.html">informativa sulla privacy</a>.</span>
+            </label>
+            <span class="error" id="privacy-err" role="alert"></span>
+          </div>
+        </div>
+        <p class="fineprint">I campi con * sono obbligatori. I dati restano nel tuo dispositivo finché non invii tu l'email.</p>
+        <button class="btn btn-accent" type="submit" style="margin-top:18px">Prepara l'email {{icon:mail}}</button>
+        <div id="form-status" class="form-status" role="status" hidden></div>
+      </form>
+    </div>
+  </div>
+</section>
